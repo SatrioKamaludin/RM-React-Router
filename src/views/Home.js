@@ -36,11 +36,11 @@ class Home extends Component {
         return (
             <div>
                 <Navbar />
-                <h1>Home page</h1>
-                <div>
+                <h1 style={{paddingLeft: "6rem"}}>Home page</h1>
+                <div style={container}>
                     {skills.map(item =>
-                        <div key={item.id}>
-                            <img src={item.image} alt={item.name} />
+                        <div key={item.id} style={card}>
+                            <img src={item.image} alt={item.name} style={img}/>
                             <h3>{item.name}</h3>
                         </div>
                     )}
@@ -52,3 +52,19 @@ class Home extends Component {
 }
 
 export default Home
+
+const container = {
+    display: "flex",
+    padding: "0 6rem",
+    justifyContent: "space-between"
+}
+
+const card = {
+    width: "20%",
+    height: "15rem"
+} 
+
+const img = {
+    width: "100%",
+    height: "100%"
+} 
