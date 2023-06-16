@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const nav = {
     display: "flex",
@@ -16,14 +17,19 @@ const myUl = {
     width: "20%"
 }
 
+const link = {
+    textDecoration: "none",
+    color: "white"
+}
+
 const Navbar = () => {
     return(
         <div style={nav}>
             <h1>This is Header</h1>
             <ul style={myUl}>
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
+                <li><Link to="/" style={link}>Home</Link></li>
+                <li><Link to="/About" style={link}>About</Link></li>
+                <li><Link to="/Contact" style={link}>Contact</Link></li>
             </ul>
         </div>
     )
