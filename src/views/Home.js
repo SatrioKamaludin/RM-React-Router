@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+import MainLayout from '../layouts/MainLayout'
 
 class Home extends Component {
     state = {
@@ -34,19 +33,17 @@ class Home extends Component {
     render() {
         const { skills } = this.state
         return (
-            <div>
-                <Navbar />
-                <h1 style={{paddingLeft: "6rem"}}>Home page</h1>
+            <MainLayout>
+                <h1 style={{ paddingLeft: "6rem" }}>Home page</h1>
                 <div style={container}>
                     {skills.map(item =>
                         <div key={item.id} style={card}>
-                            <img src={item.image} alt={item.name} style={img}/>
+                            <img src={item.image} alt={item.name} style={img} />
                             <h3>{item.name}</h3>
                         </div>
                     )}
                 </div>
-                <Footer />
-            </div>
+            </MainLayout>
         )
     }
 }
@@ -62,7 +59,7 @@ const container = {
 const card = {
     width: "20%",
     height: "15rem"
-} 
+}
 
 const img = {
     width: "100%",
