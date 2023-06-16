@@ -1,16 +1,13 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 import Home from './views/Home'
-/*
-  home = "/"
-  about = "/about"
-*/
-
+import About from './views/About'
 
 const App = () => {
   return(
     <div>
-      <Route path="/" component={Home}/>
+      <Route path="/" exact component={Home}/>
+      <Route path="/About" exact component={About}/>
     </div>
   )
 }
